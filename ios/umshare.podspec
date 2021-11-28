@@ -12,7 +12,7 @@ A new flutter plugin project.
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
-  s.source           = { :path => '.' }
+  s.source           = { :git => 'git@github.com:XHL-Mao/flutter-umshare.git', :tag => s.version.to_s }
   s.source_files = 'Classes/**/*'
   
   s.dependency 'Flutter'
