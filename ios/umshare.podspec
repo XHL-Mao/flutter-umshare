@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'umshare'
-  s.version          = '0.0.1'
+  s.version          = '0.1.0'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -14,16 +14,31 @@ A new flutter plugin project.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
+  
   s.dependency 'Flutter'
-  s.dependency 'UMCommon'
-  s.dependency 'UMShare/Social/ReducedQQ'
-  s.dependency 'UMShare/Social/ReducedSina'
-  s.dependency 'UMShare/Social/AlipayShare'
-  s.dependency 'UMShare/Social/DingDing'
-  s.platform = :ios, '8.0'
+  s.ios.deployment_target = '9.0'
+  
   s.static_framework = true
+  # s.resource_bundles = {
+  #   'UMShareTest' => ['UMShareTest/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
+    
+  # U-Share SDK UI模块，分享面板
+  s.dependency 'UMShare/UI'
+  #必须集成，由原来的UMCCommon变为了UMCommon
+  s.dependency 'UMCommon'
+  #必须集成
+  s.dependency 'UMDevice'
+
+  s.dependency 'UMShare/Social/WeChat'
+  s.dependency 'UMShare/Social/QQ'
+  s.dependency 'UMShare/Social/Sina'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-  s.swift_version = '5.0'
+#  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+#  s.swift_version = '5.0'
 end

@@ -33,9 +33,11 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 显式依赖umeng asms库
-    implementation files('libs/umeng-asms-armeabi-v1.2.2.aar') // asms包依赖(必选)
+    // asms包依赖(必选)
     //新浪官方依赖库
-    implementation 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'
+//    implementation 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'
+//    implementation files('libs/openDefault-10.10.0.aar')
     //QQ官方依赖库
     implementation 'com.tencent.tauth:qqopensdk:3.51.2'
+    implementation project(path: ':umeng-asms-armeabi-v1.2.2')
 }

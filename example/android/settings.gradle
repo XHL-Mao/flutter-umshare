@@ -1,3 +1,5 @@
+include ':umeng-asms-armeabi-v1.2.2'
+include ':openDefault-10.10.0'
 include ':app'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
